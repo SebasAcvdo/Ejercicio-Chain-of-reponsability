@@ -4,19 +4,28 @@
 
 package com.mycompany.tickets;
 
+import java.util.Scanner;
+
 import Soporte.Handler;
 import Soporte.Support;
 import Soporte.Support_1;
 import Soporte.Support_2;
 import Soporte.Support_3;
 
-/**
- *
- * @author ESTACION
- */
+
 public class Tickets {
 
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Bienvenido al sistema de soporte tecnico");
+        System.out.println("Por favor, seleccione el nivel de soporte que necesita:");
+        System.out.println("1. Soporte Nivel 1");
+        System.out.println("2. Soporte Nivel 2");
+        System.out.println("3. Soporte Nivel 3");
+        System.out.print("Ingrese el numero correspondiente a su seleccion: ");
+        int nivelSoporte = sc.nextInt();
      
         Handler nivel_1 = new Support_1();
         Handler nivel_2 = new Support_2();
@@ -24,14 +33,10 @@ public class Tickets {
         
         nivel_1.setNext(nivel_2);
         nivel_2.setNext(nivel_3);
-        
-       int solicitud_1 = 1;
-       int solicitud_2 = 2;
-       int solicitud_3 = 3;
+
        
-       nivel_1.handlerRequest(solicitud_1);
-       nivel_1.handlerRequest(solicitud_2);
-       nivel_1.handlerRequest(solicitud_3);
+       nivel_1.handlerRequest(nivelSoporte);
+
         
         
         

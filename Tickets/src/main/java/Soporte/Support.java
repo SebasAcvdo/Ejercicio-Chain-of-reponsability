@@ -5,7 +5,6 @@
 package Soporte;
 
 import java.net.Authenticator;
-import org.omg.CORBA.Request;
 
 /**
  *
@@ -42,7 +41,7 @@ public boolean canHandle(int request) {
     
     protected void passToNext(int request){
         if(nextHandler != null){
-            System.out.println("no pudo "+ getHandlerName());
+            System.out.println("No logramos resolver su problema, su problema fue escalado a " + getHandlerName());
             nextHandler.handlerRequest(request);
         }else{
             System.out.println("No se pudo procesar");

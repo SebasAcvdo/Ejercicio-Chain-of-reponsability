@@ -11,12 +11,15 @@ package Soporte;
 public class Support_3 extends Support {
     
     public Support_3(){
-        super(2);
+        super(3);
     } 
+    
     @Override
     protected void processRequest(int request) {
+        System.out.println("Soporte tecnico resolvio el ticket numero: "+ request);
     }
+ 
     protected String getHandlerName(){
-        return "Soporte Nivel 2";
+        return "Soporte Nivel 3";
     }
 }
